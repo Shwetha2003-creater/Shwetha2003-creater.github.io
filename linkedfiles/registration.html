@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <style>
+   .border{
+        height:200px;
+        width:30%;
+        border: 2px solid;
+        background-color:aquamarine;
+     }
+     a{
+        text-decoration: none;
+        font-size: 20px;
+        color:black;
+     }
+  </style>
+<body>
+    <div class="border">
+        <table>
+           <tr>
+                <th>Account details</th>
+            </tr>
+            <tr>
+                <td>
+                    Name :  
+                </td>
+                <td>
+                    <input type="text" required id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mobile : 
+                </td>
+                <td>
+                    <input type="text" id="mobile">
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    Acno : 
+                </td>
+                <td>
+                    <input type="text" id="acno">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Confirm Acno : 
+                </td>
+                <td>
+                    <input type="text" id="conacno">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="submit()">Submit</button>
+                </td>
+            </tr>
+        </table>
+
+        <a href="./accountdetails.html">If registrated do the transaction now</a>
+        <div id="display"></div>
+    </div>
+    <script>
+        function submit(){
+            username = document.getElementById("name").value
+            usermobile = document.getElementById("mobile").value
+            useracno = document.getElementById("acno").value
+            userconacno = document.getElementById("conacno").value
+            if(usermobile == Mobile){
+                document.getElementById("display").innerHTML= "User already exists"
+            }
+            else if(useracno == userconacno){
+                document.getElementById("display").innerHTML="Registration successful"
+                sessionStorage.setItem('storename',username)
+                sessionStorage.setItem('storemobile',usermobile)
+                sessionStorage.setItem('storeacno',useracno)
+                sessionStorage.setItem('storeconacno',userconacno)
+            }
+            else if(useracno != userconacno){
+                document.getElementById("display").innerHTML="Acno does not match"
+            }
+        }
+        Name = sessionStorage.getItem('storefirstname')
+        Mobile = sessionStorage.getItem('storemobile')
+        Acno = sessionStorage.getItem('storeacno')
+        conAcno = sessionStorage.getItem('storeconacno')
+        console.log(Name);
+        console.log(Mobile);
+        console.log(Acno);
+        console.log(conAcno);
+    </script>
+</body>
+</html>

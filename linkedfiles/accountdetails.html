@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+     Account number:<input type="number" id="acno" required><br><br>
+     <button onclick="avalbalance()">Show balance</button><br><br>
+     <label id="toVerify"></label><br><br>
+     <input  id="bankBalance" value="1000"><br><br>
+     <button id="deposit">Deposit</button>
+     <button id="withdraw">Withdraw  </button>
+  </form>
+    <script>
+        var balance = document.getElementById('bankBalance').value;
+            balance = Number(balance);
+        var deposit = document.getElementById("deposit");
+            deposit.addEventListener('click', depositCash);
+        var withdraw = document.getElementById('withdraw');
+            withdraw.addEventListener('click',withdrawCash);
+
+    function depositCash () {
+     var depositAmt = prompt('How much would you like to deposit?');
+      depositAmt = Number(depositAmt);
+      avalbalance = depositAmt + balance;
+      document.write(+avalbalance);
+      return balance;
+    }
+      function withdrawCash () {
+      var withdrawAmt = prompt('How much would you like to withdraw?');
+      withdrawAmt = Number(withdrawAmt);
+      avalbalance = withdrawAmt - balance;
+      document.write(-avalbalance);
+      return balance;
+     }
+     function avalbalance(){
+        var bal=document.getElementById("myForm")
+        bal.addEventListener('submit',function(event){event.preventDefault()})
+            document.getElementById('toVerify').innerHTML = ("1000")
+     }
+    </script>
+
+</body>
+</html>

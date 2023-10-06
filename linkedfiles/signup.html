@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       .border{
+         height:250px;
+         width:23%;
+         background-color: hotpink;
+       }
+       th{
+         font-size: 30px;
+         font-weight: bold;
+       }
+       td{
+         font-weight: bold;
+       }
+    </style>
+  
+   <center><div class="border">
+    <table>
+    <div>
+        <tr>
+           <th>Signup</th>
+        </tr>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text"  id="uname"></td>
+      </tr>
+      
+      <tr>
+        <td>password:</td>
+        <td><input type="password"  id="upass"></td>
+      </tr>
+       
+      <tr>
+       <td>Confirm password:</td> 
+       <td><input type="password"  id="cpass"></td>
+      </tr>   
+  </table> 
+       <h5>already a member?<a href="./login.html">login</a></h5><br>
+       <button onclick="signup()">signup</button>
+       </div id="show">
+   </div></center> 
+  <script>
+     function signup(){
+        username=document.getElementById("uname").value
+        userpassword=document.getElementById("upass").value
+        userconfirm=document.getElementById("cpass").value
+     
+     if(userpassword==userconfirm){
+        alert("Registration suceessfull");
+       sessionStorage.setItem('storeuname',username)
+       sessionStorage.setItem('storeupass',userpassword)
+       sessionStorage.setItem('storecpass',userconfirm)
+    }
+     else if(userpassword!=userconfirm){
+        alert("Password does not match");
+       Name=sessionStorage.getItem("sotreuname",username)
+       password=sessionStorage.getItem("storeupass",userpassword)
+       Confirmpassword=sessionStorage.getItem("storecpass",usercconfirm)
+       console.log(Name);
+       console.log(password);
+       console.log(Confirmpasword);
+    }
+   }  
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <style>
+    th{
+        font-size:25px;
+    }
+    table{
+        width:500px;
+        height:300px;
+        border: 2px solid;
+        background-color: cadetblue;
+    }
+    h1{
+        text-align: center;
+    }
+  </style>
+<body>
+    <h1>Registration Form</h1>
+  <center><div>
+    <table>
+        <tr>
+          <td>Name:</td> 
+          <td><input type="text" required id="firstname"></td>
+        </tr>
+        <tr>
+          <td>Last name:</td>
+          <td><input type="text" id="lastname"></td>
+        </tr>
+        <tr>
+            <td>Mobile:</td>
+            <td><input type="number" id="mobile"></td>
+        </tr>
+        <tr>
+            <td>Email id:</td>
+            <td><input type="text" id="email"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" id="pass"></td>
+        </tr>
+        <tr>
+            <td>Confirm password:</td>
+            <td><input type="text" id="conpass"></td>
+        </tr>
+        <tr>
+            <td><button onclick="submit()">submit</button></td>
+        </tr>   
+    </table>
+    <div id="display"></div>
+ </div></center>
+    <script>
+        function submit(){
+            userfirstname=document.getElementById("firstname").value
+            userlastname=document.getElementById("lastname").value
+            usermobile=document.getElementById("mobile").value
+            useremail=document.getElementById("email").value
+            userpass=document.getElementById("pass").value
+            userconpass=document.getElementById("conpass").value
+            if(usermobile == Mobile){
+               document.getElementById("display").innerHTML="User already exixts"
+            }
+            else if(userpass == userconpass){
+              document.getElementById("display").innerHTML="Registration successfull"
+              sessionStorage.setItem('storefirstname',userfirstname)
+              sessionStorage.setItem('storelastname',userlastname)
+              sessionStorage.setItem('storemobile',usermobile)
+              sessionStorage.setItem('storeemail',useremail)
+              sessionStorage.setItem('storepass',userpass)
+            }
+            else if(userpass != userconpass){
+                document.getElementById("display").innerHTML="password does not match"
+            }
+        }
+        Firstname=sessionStorage.getItem('storefirstname')
+        Lastname=sessionStorage.getItem('storelastname')
+        Mobile=sessionStorage.getItem('storemobile')
+        Email=sessionStorage.getItem('storeemail')
+        Password=sessionStorage.getItem('storepass')
+        console.log(Firstname);
+        console.log(Lastname);
+        console.log(Mobile);
+        console.log(Email);
+        console.log(Password);
+    </script>
+</body>
+</html>

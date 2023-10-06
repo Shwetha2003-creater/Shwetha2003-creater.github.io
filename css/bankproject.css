@@ -1,0 +1,86 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:50px;
+    width:100%;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    font-weight: bold;
+    transition: 0.25sec;
+ }
+ .text{
+    height:300px;
+    width:60%;
+    
+ }
+  article{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+ .welcome{
+   font-size:15px;
+   color:white;
+   background-color: darkslategray;
+ }
+ .bank{
+   font-size:30px;
+   color:cornflowerblue
+ }
+ .website{
+   font-size:40px;
+   color:dodgerblue;
+ }
+ .learnmore{
+    height:30px;
+    width:40%;
+    font-size:25px;
+    font-weight: bolder;
+    font-style: italic;
+    border: 2px solid;
+    color:black;
+    font-weight: bold;
+  }
+  .onlinebank{
+    height:450px;
+    width: 100%;
+ }
+ nav>a{
+  margin-left:0.75em;
+  margin-right: 0.75em;
+ }
+ nav:hover a{
+  color:palevioletred;
+ }
+ nav:hover a:hover{
+  color:dodgerblue;
+ }
+ table{
+  border: 2px solid;
+ }
+ .logo{
+  height:50px;
+  width:10%;
+ }
+.inv{
+  height:500px;
+  width:3%;
+}
+.contact{
+  height:200px;
+  width:30%;
+  border: 2px solid;
+}
+.fast{
+  font-size: 20px;
+  font-weight: bold;
+}
+.efficient{
+   font-size: 25px;
+   font-weight: bold;
+}

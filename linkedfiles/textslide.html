@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Slider on Image</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+   <style>
+
+.slider-container {
+  position: relative;
+  display: inline-block;
+}
+
+.slider-container img {
+  max-width: 100%;
+}
+
+.text-slider {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  animation: slide 10s infinite;
+}
+
+.slider-text {
+  display: inline;
+  opacity: 0;
+}
+
+@keyframes slide {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20%, 80% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+}
+
+   </style>
+<body>
+  <div class="slider-container">
+    <img src="./onlinebank.png" alt="Slider Image">
+    <div class="text-slider">
+      <span class="slider-text">Text 1</span>
+      <span class="slider-text">Text 2</span>
+      <span class="slider-text">Text 3</span>
+    </div>
+  </div>
+</body>
+</html>
